@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filmmaker Dashboard │ eTheater</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../filmmaker_profile/css/filmmaker_dashboard.css">
+</head>
+<body>
+    <div class="circuit-bg"></div>
+    <canvas id="starfield"></canvas>
+    
+    <div class="sidebar">
+      <a href="#">🎥</a> <!-- My Films -->
+      <a href="#">📈</a> <!-- Insights & Analytics -->
+      <a href="#">📤</a> <!-- Upload New Project -->
+      <a href="#">💬</a> <!-- Reviews & Comments -->
+      <a href="#">📦</a> <!-- Distribution -->
+      <a href="#">💰</a> <!-- Royalties & Earnings -->
+      <a href="#">⚙️</a> <!-- Settings -->
+    </div>
+  
+    <div class="topbar">
+      <div class="profile">
+        <span>🧑‍💼 Filmmaker</span>
+      </div>
+      <div class="notifications">
+        <span>🔔</span>
+      </div>
+      <div class="date-time">
+        <span>01 May 2025 — 14:38:22 GMT</span>
+      </div>
+    </div>
+  
+    <div class="dashboard">
+      <div class="panel">
+        <h2>🎬 Project Overview</h2>
+        <p>You have 2 projects live, 1 in review.</p>
+      </div>
+      <div class="panel">
+        <h2>💸 Earnings Tracker</h2>
+        <p>$1,250 earned this month. +8% growth.</p>
+      </div>
+      <div class="panel">
+        <h2>📡 Distribution</h2>
+        <p>Your film is now live on eTheater.</p>
+      </div>
+      <div class="panel">
+        <h2>🧠 Mateo AI Says</h2>
+        <p>Your audience engagement rose in Sci-Fi genre. Consider sequel release.</p>
+      </div>
+      <div class="panel">
+        <h2>🗣️ Viewer Interaction</h2>
+        <p>45 new reviews this week. Avg rating: 4.6⭐</p>
+      </div>
+      <div class="panel">
+          <h2>📈 Insights & Analytics</h2>
+          <p>Your film has reached Latin America and Asia. 60% of viewers used NeeRoy AI for dubbing/subtitles.</p>
+          <p>14K+ real-time reactions in the last 24hrs.</p>
+      </div>
+      <div class="panel">
+          <h2>🌐 Global Rank</h2>
+          <p> Top 1.2% in Indie Sci-Fi.</p>
+      </div>
+      <div class="panel">
+          <h2>💻 Top Platform</h2>
+          <p>Mobile (58%), Smart TVs (28%), eTheater Desktop (14%).</p>
+      </div>
+    </div>
+  </body>
+  </html>
+  
+  
+  
+<!-- JavaScript for Starfield Animation -->
+
+<script>
+    const canvas = document.getElementById("starfield");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    let stars = [];
+    
+    for (let i = 0; i < 100; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        velocity: Math.random() * 0.5
+      });
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00ffff22";
+    
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+    
+        star.y += star.velocity;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+    
+      requestAnimationFrame(animate);
+    }
+    animate();
+</script>
+      

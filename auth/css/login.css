@@ -1,0 +1,217 @@
+    :root {
+        --neon-cyan: #00FFFF;
+        --electric-purple: #8000FF;
+        --luminous-blue: #00BFFF;
+        --galactic-silver: #C0C0C0;
+        --deep-black: #0D0D0D;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: var(--deep-black);
+        font-family: 'Roboto', sans-serif;
+        color: var(--galactic-silver);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 2rem;
+    }
+
+    .login-box {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 16px;
+        padding: 2.5rem;
+        width: 100%;
+        max-width: 460px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2rem;
+        color: var(--electric-purple);
+        text-align: center;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 10px var(--electric-purple);
+    }
+
+    p.subtitle {
+        font-family: 'Raleway', sans-serif;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+        color: var(--galactic-silver);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+  }
+  
+  .form-group input {
+      width: 100%;
+      padding: 1rem 0.5rem 0.5rem 0.5rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--galactic-silver);
+      color: var(--galactic-silver);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+      border-color: var(--luminous-blue);
+  }
+  
+  .form-group label {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--galactic-silver);
+      pointer-events: none;
+      transition: 0.3s ease all;
+  }
+  
+  .form-group input:focus+label,
+  .form-group input:not(:placeholder-shown)+label {
+      top: -0.6rem;
+      font-size: 0.75rem;
+      color: var(--luminous-blue);
+  }
+    button {
+        background: var(--neon-cyan);
+        padding: 0.9rem;
+        border: none;
+        border-radius: 999px;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 0 15px var(--neon-cyan);
+        cursor: pointer;
+        transition: transform 0.6s ease, box-shadow 0.6s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    button a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    button:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 25px var(--neon-cyan);
+    }
+
+    .extra-links {
+        font-size: 0.855rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .extra-links a {
+        color: var(--neon-cyan);
+        text-decoration: none;
+        margin: 0 0.5rem;
+    }
+
+    .extra-links a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        body {
+          padding: 1.5rem 1rem;
+          height: auto;
+          flex-direction: column;
+        }
+      
+        .login-box {
+          padding: 2rem 1.5rem;
+          box-shadow: 0 0 15px rgba(0, 255, 255, 0.04);
+        }
+      
+        h2 {
+          font-size: 1.6rem;
+          margin-bottom: 0.7rem;
+        }
+      
+        p.subtitle {
+          font-size: 0.95rem;
+          margin-bottom: 1.5rem;
+        }
+      
+        .form-group input {
+          font-size: 0.95rem;
+          padding: 0.9rem 0.5rem 0.5rem 0.5rem;
+        }
+      
+        .form-group label {
+          font-size: 0.8rem;
+        }
+      
+        button {
+          padding: 0.75rem;
+          font-size: 0.95rem;
+        }
+      
+        .extra-links {
+          font-size: 0.8rem;
+          margin-top: 1rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        h2 {
+          font-size: 1.4rem;
+        }
+      
+        .login-box {
+          padding: 1.5rem;
+        }
+      
+        .form-group input {
+          font-size: 0.9rem;
+        }
+      
+        .form-group label {
+          font-size: 0.75rem;
+        }
+      
+        button {
+          font-size: 0.9rem;
+        }
+      
+        .extra-links {
+          font-size: 0.5rem;
+        }
+      }
+      

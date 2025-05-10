@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation │ eTheater</title>
+    <link rel="stylesheet" href="../auth/css/email_pending.css">
+</head>
+<body>
+    <div class="pulse-glow"></div>
+    
+    <h2>Final Stretch! 🚀</h2>
+    <p>Dive into your inbox to kick off the adventure! ✉️</p>
+    
+    <p>
+      Link lost in cyberspace? 🌌
+      <a href="{% url 'resend_confirmation' %}" onclick="alert('Confirmation email sent!')">Hit resend! 🤪</a>
+    </p>
+    
+    <footer>© 2025 eTheater. A TWii Innovation.</footer>
+    
+    <script>
+      gtag('event', 'sign_up', {
+        method: 'referral',
+      });
+    </script>
+</body>
+</html>
+
